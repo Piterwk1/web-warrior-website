@@ -6,5 +6,22 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    'gatsby-transformer-remark',
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/projects/`,
+      },
+    },
+  ],
+  siteMetadata: {
+    title: 'Web Warrior',
+    description: 'web dev portfolio',
+    copyright: 'This website is free software',
+    contact: 'me@thewebwarrior.com'
+  }
 }
